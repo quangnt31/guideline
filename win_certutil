@@ -1,0 +1,2 @@
+certutil -encode xxx.zip zzz.txt
+certutil -decode zzz.txt xxx.zip
