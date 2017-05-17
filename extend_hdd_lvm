@@ -1,0 +1,13 @@
+extend hdd lvm
+Step0: fdisk -l /dev/sda
+Step1: cfdisk (type 8e:Linux LVM) example: /dev/sda6
+Step2: reboot
+Step3: pvcreate /dev/sda6
+Step4: Find VolumeGroupName
+$ vgdisplay, (byte) --- Volume group ---, (byte) VG Name               Node3-vg, (byte) ...
+Or:
+$ vgs, (byte) VG       #PV #LV #SN Attr   VSize  VFree, (byte) Node3-vg   1   2   0 wz--n- 39.76g    0 
+Step5: vgextend Node3-vg /dev/sda6
+	 Node3-vg : VolumeGroup
+Step6: lvextend -l +100%FREE /dev/Node3-vg/root
+Step7: resize2fs /dev/Node3-vg/root (extend filesystem)
