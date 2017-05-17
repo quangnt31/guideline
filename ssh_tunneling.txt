@@ -1,0 +1,10 @@
+log in LB 192.168.1.8
+	ssh -L 3028:localhost:3028 test@192.168.1.9
+	Acquire::http::Proxy "http://localhost:3028";
+	
+	
+apt-get install xrdp
+apt-get update
+apt-get install xfce4
+echo xfce4-session >~/.xsession
+sudo service xrdp restart
