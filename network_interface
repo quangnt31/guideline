@@ -1,0 +1,24 @@
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+    address 192.168.8.35
+    netmask 255.255.255.0
+    gateway 192.168.8.254
+    post-up ip ro add 192.168.8.30/32 via 192.168.8.31 dev eth0
+    post-up ip ro add 192.168.6.11/32 via 192.168.8.31 dev eth0
+    post-up ip ro add 192.168.7.15/32 via 192.168.8.32 dev eth0
+
+auto eth1
+iface eth1 inet static
+    address 10.12.0.10
+    netmask 255.255.255.0
+    mtu 1500
+	post-up ip iptables-restore /etc/iptable.rules
