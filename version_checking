@@ -1,0 +1,4 @@
+# check debian version
+cat /etc/issue
+cat /etc/debian_version
+hostnamectl
