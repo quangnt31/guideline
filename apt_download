@@ -1,0 +1,2 @@
+apt-get --print-uris --yes -d --reinstall install cpp-4.9 $(apt-cache depends cpp-4.9 | grep "  Depends:" |  sed 's/  Depends://' | sed ':a;N;$!ba;s/\n//g') | grep ^\' | cut -d\' -f2 >downloads.list
+wget --input-file downloads.list
