@@ -1,0 +1,8 @@
+1) restart all process, but do not reload config in /etc/supervisor/conf.d
+   supervisorctl restart all
+2) restart all process and reload config in /etc/supervisor/conf.d
+   supervisorctl reload all   
+3) reread config in /etc/supervisor/conf.d, but do not restart process
+   supervisorctl reread
+4) restart only process, which has changed config with "reread"   
+   supervisorctl update
