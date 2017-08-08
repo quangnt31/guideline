@@ -19,3 +19,5 @@ and then restart ssh service:
 ---------------------------------------
 |      sudo service ssh restart       |
 ---------------------------------------
+
+https://www.digitalocean.com/community/questions/server-does-not-support-diffie-hellman-group1-sha1-for-keyexchange+&cd=1&hl=en&ct=clnk
